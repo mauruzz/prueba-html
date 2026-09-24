@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Bacca - Catálogo</title>
+    <style>
+        /* Paleta de colores */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FAF5F0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Encabezado */
+        header {
+            background-color: #D87A7A;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            background-color: white; /* Por si el logo tiene transparencias */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Navegación */
+        nav {
+            background-color: #F4B6C2;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        nav a:hover {
+            color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        
+        .section-title {
+            color: #D87A7A;
+            border-bottom: 3px solid #F4B6C2;
+            padding-bottom: 10px;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+        
+        /* Tarjeta de Producto */
+        .product-card {
+            display: flex;
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        /* Cuadrícula de 4 imágenes */
+        .product-image-grid {
+            flex: 0 0 50%; /* Ocupa exactamente la mitad */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 12px;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing: border-box;
+        }
+        .product-image-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            aspect-ratio: 1 / 1; /* Mantiene las fotos cuadradas y prolijas */
+            background-color: #f0f0f0; /* Color de fondo mientras carga */
+        }
+
+        .product-details {
+            flex: 0 0 50%;
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        .product-details h3 {
+            margin-top: 0;
+            color: #D87A7A;
+            font-size: 1.8em;
+        }
+        .product-details p, .product-details ul {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .price {
+            font-size: 1.5em;
+            color: #333;
+            font-weight: bold;
+            margin: 15px 0;
+            background-color: #F4B6C2;
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            width: fit-content;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #D87A7A;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: center;
+            width: fit-content;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background-color: #c06565;
+        }
+        
+        /* Nueva Sección de Envíos y Pagos (Basado en el PDF) */
+        .info-section {
+            max-width: 1200px;
+            margin: 60px auto 40px auto;
+            padding: 0 20px;
+        }
+        .info-cards {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .info-card {
+            background-color: white;
+            border: 1px solid #F4B6C2;
+            border-radius: 12px;
+            padding: 25px;
+            flex: 1;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .info-card h4 {
+            color: #D87A7A;
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .info-card li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+            color: #555;
+            line-height: 1.5;
+        }
+        .info-card li strong {
+            color: #333;
+        }
+        
+        /* Banner inferior de contacto */
+        .contact-banner {
+            background-color: #FDF2F4;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            color: #D87A7A;
+        }
+        .contact-banner h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+        .contact-banner p {
+            margin: 5px 0;
+            font-size: 1.1em;
+            color: #D87A7A;
+        }
+        .contact-banner strong {
+            font-weight: bold;
+        }
+
+        /* Responsive: Celulares */
+        @media (max-width: 768px) {
+            .product-card {
+                flex-direction: column;
+            }
+            .product-image-grid, .product-details {
+                flex: 0 0 100%;
+            }
+            .product-image-grid {
+                padding: 15px;
+            }
+            .info-cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Reemplaza "logo.jpg" por el nombre de tu archivo de imagen -->
+        <img src="logo.jpg" alt="Logo Tienda Bacca" class="logo">
+        <h1>Tienda Bacca</h1>
+        <p>Diseños exclusivos - Repostería y Decoración</p>
+    </header>
+
+    <nav>
+        <a href="#reposteria">Repostería</a>
+        <a href="#hogar">Hogar & Deco</a>
+        <a href="#envios">Envíos y Pagos</a>
+    </nav>
+
+    <div class="container">
+        
+        <h2 id="reposteria" class="section-title">Repostería Creativa</h2>
+
+        <!-- Producto 1 con 4 fotos -->
+        <div class="product-card">
+            <div class="product-image-grid">
+                <img src="https://via.placeholder.com/400x400/F4B6C2/ffffff?text=Foto+1" alt="Cortador 1">
+                <img src="https://via.placeholder.com/400x400/F4B6C2/ffffff?text=Foto+2" alt="Cortador 2">
+                <img src="https://via.placeholder.com/400x400/F4B6C2/ffffff?text=Foto+3" alt="Cortador 3">
+                <img src="https://via.placeholder.com/400x400/F4B6C2/ffffff?text=Foto+4" alt="Cortador 4">
+            </div>
+            <div class="product-details">
+                <h3>Set de Cortadores Básicos</h3>
+                <p>Colección de cortadores ideales para galletas de mantequilla y fondant. Fabricados en material PLA apto para contacto con alimentos.</p>
+                <ul>
+                    <li>Incluye 5 piezas de diferentes tamaños.</li>
+                    <li>Bordes con filo reforzado para un corte limpio.</li>
+                    <li>Fáciles de lavar (no apto lavavajillas).</li>
+                </ul>
+                <div class="price">$5.500 ARS</div>
+                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+            </div>
+        </div>
+
+        <h2 id="hogar" class="section-title">Hogar & Deco</h2>
+
+        <!-- Producto 2 con 4 fotos -->
+        <div class="product-card">
+            <div class="product-image-grid">
+                <img src="https://via.placeholder.com/400x400/D87A7A/ffffff?text=Foto+1" alt="Velador 1">
+                <img src="https://via.placeholder.com/400x400/D87A7A/ffffff?text=Foto+2" alt="Velador 2">
+                <img src="https://via.placeholder.com/400x400/D87A7A/ffffff?text=Foto+3" alt="Velador 3">
+                <img src="https://via.placeholder.com/400x400/D87A7A/ffffff?text=Foto+4" alt="Velador 4">
+            </div>
+            <div class="product-details">
+                <h3>Velador LED Minimalista</h3>
+                <p>Ilumina tus espacios con un diseño moderno. Fabricado en impresión 3D con texturas únicas que difuminan la luz suavemente creando un ambiente cálido.</p>
+                <ul>
+                    <li>Incluye foco de luz LED cálida.</li>
+                    <li>Conexión estándar a 220v con tecla de encendido.</li>
+                    <li>Bajo consumo energético y ultraliviano.</li>
+                </ul>
+                <div class="price">$12.000 ARS</div>
+                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Nueva sección de Envíos y Pagos estilo PDF -->
+    <div id="envios" class="info-section">
+        <div class="info-cards">
+            <!-- Tarjeta Pagos -->
+            <div class="info-card">
+                <h4>💳 Medios de Pago</h4>
+                <ul>
+                    <li><strong>• Transferencia Bancaria:</strong> 10% de descuento acumulable.</li>
+                    <li><strong>• Tarjetas de Crédito / Débito:</strong> Hasta 3 cuotas sin interés con Mercado Pago.</li>
+                    <li><strong>• Efectivo:</strong> Disponible para retiros presenciales en el taller.</li>
+                </ul>
+            </div>
+            
+            <!-- Tarjeta Envíos -->
+            <div class="info-card">
+                <h4>📦 Envíos & Entregas</h4>
+                <ul>
+                    <li><strong>• Envíos Nacionales:</strong> Correo Argentino / Andreani (a domicilio o sucursal).</li>
+                    <li><strong>• Móvil / Mensajería:</strong> Envíos express en el día para CABA y GBA.</li>
+                    <li><strong>• Retiro Gratis:</strong> En punto de retiro (coordinación previa).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Banner de Contacto -->
+        <div class="contact-banner">
+            <h3>✨ ¿Buscás un diseño personalizado o un color especial? ✨</h3>
+            <p>Hacemos impresiones 3D a pedido, recuerdos para eventos y regalos corporativos. ¡Consultanos!</p>
+            <p><strong>Instagram:</strong> @tiendabacca | <strong>WhatsApp:</strong> +54 9 11 1234-5678</p>
+        </div>
+    </div>
+
+</body>
+</html>
