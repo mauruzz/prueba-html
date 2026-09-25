@@ -683,7 +683,7 @@
             const productTitle = btn.parentElement.querySelector('.product-title').innerText;
             
             // Armamos la plantilla del mensaje con espacios en blanco para que el cliente la complete
-            const mensajePlantilla = `¡Hola! Me gustaría hacer un pedido relacionado con: *${productTitle}*.\n\nPara agilizar el pedido, te dejo los siguientes detalles:\n- Cantidad de cortadores: \n- Modelos específicos: \n- Nombre y Apellido: \n- Dirección de envío o sucursal de retiro: \n- Medio de pago elegido: `;
+            const mensajePlantilla = `¡Hola! Me gustaría hacer un pedido relacionado con: *${productTitle}*.\n\nPara agilizar el pedido, te dejo los siguientes detalles:\n- Nombre y Apellido: \n- Dirección de envío o sucursal de retiro: \n- Medio de pago elegido: \n- Cantidad de cortadores: \n- Modelos específicos: `;
             
             // Codificamos el mensaje para que sea válido en una URL (respeta los saltos de línea y espacios)
             const mensajeCodificado = encodeURIComponent(mensajePlantilla);
