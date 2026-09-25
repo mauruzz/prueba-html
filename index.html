@@ -49,14 +49,18 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 5px rgba(74, 62, 61, 0.05);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
         }
         nav a {
-            margin: 0 15px;
             text-decoration: none;
             color: #4A3E3D;
             font-weight: bold;
             font-size: 1.1em;
             transition: color 0.3s;
+            padding: 0 10px;
         }
         nav a:hover {
             color: #FFFFFF;
@@ -76,8 +80,81 @@
             margin-bottom: 30px;
             font-size: 2em;
         }
+
+        /* Caja General de Precios y Características */
+        .global-info-box {
+            background-color: #FFFFFF;
+            border: 2px solid #F4B6C2;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 15px rgba(74, 62, 61, 0.08);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .global-features {
+            flex: 1;
+            min-width: 300px;
+        }
+        .global-features h2 {
+            color: #D87A7A;
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        .global-features p {
+            font-size: 1.1em;
+            color: #6E5E5C;
+        }
+        .global-features ul {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #4A3E3D;
+            padding-left: 20px;
+        }
+        .global-features ul li {
+            margin-bottom: 8px;
+        }
         
-        /* Tarjeta de Producto */
+        /* Estilos de Precios Múltiples */
+        .global-pricing {
+            flex: 1;
+            min-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .price-item {
+            background-color: #FAF5F0;
+            border-left: 5px solid #D87A7A;
+            padding: 12px 20px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #4A3E3D;
+            font-weight: bold;
+            font-size: 1.15em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+        .price-item span {
+            font-weight: normal;
+            color: #6E5E5C;
+        }
+        .combo-note {
+            background-color: #FFE6E6;
+            color: #D87A7A;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.95em;
+            margin-top: 10px;
+        }
+        
+        /* Tarjeta de Producto Simplificada */
         .product-card {
             display: flex;
             background: #FFFFFF;
@@ -87,7 +164,6 @@
             box-shadow: 0 4px 10px rgba(74, 62, 61, 0.08);
         }
         
-        /* Cuadrícula de 4 imágenes */
         .product-image-grid {
             flex: 0 0 50%; 
             display: grid;
@@ -99,13 +175,12 @@
             box-sizing: border-box;
         }
         
-        /* Contenedor para el efecto ZOOM */
         .img-wrapper {
             width: 100%;
             height: 100%;
             overflow: hidden;
             border-radius: 8px;
-            cursor: pointer; /* Indica que es interactivo */
+            cursor: pointer;
         }
         .img-wrapper img {
             width: 100%;
@@ -132,33 +207,11 @@
             color: #D87A7A;
             font-size: 1.8em;
         }
-        .product-details p, .product-details ul {
-            font-size: 1.1em;
+        .product-details p {
+            font-size: 1.15em;
             line-height: 1.6;
             color: #4A3E3D;
-        }
-        
-        /* Estilos de Precios Múltiples */
-        .pricing-container {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .price-item {
-            background-color: #F4B6C2;
-            padding: 8px 15px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 250px;
-            color: #4A3E3D;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        .price-item span {
-            font-weight: normal;
+            margin-bottom: 25px;
         }
 
         .btn {
@@ -168,7 +221,6 @@
             padding: 15px 25px;
             text-decoration: none;
             border-radius: 8px;
-            margin-top: 20px;
             font-weight: bold;
             text-align: center;
             width: fit-content;
@@ -177,13 +229,35 @@
         .btn:hover {
             background-color: #C86B6B;
         }
+
+        /* Sección Por qué elegirnos */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+        .why-card {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(74, 62, 61, 0.05);
+            border-top: 5px solid #F4B6C2;
+        }
+        .why-card h4 {
+            color: #D87A7A;
+            font-size: 1.3em;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .why-card p {
+            color: #6E5E5C;
+            line-height: 1.6;
+            font-size: 1.05em;
+            margin: 0;
+        }
         
         /* Sección de Envíos y Pagos */
-        .info-section {
-            max-width: 1200px;
-            margin: 60px auto 40px auto;
-            padding: 0 20px;
-        }
         .info-cards {
             display: flex;
             gap: 20px;
@@ -286,6 +360,8 @@
             border: none;
             line-height: 1;
         }
+        
+        /* --- CORRECCIÓN DEL BOTÓN REDONDEADO --- */
         .lightbox-nav {
             position: absolute;
             top: 50%;
@@ -294,7 +370,11 @@
             color: white;
             border: none;
             font-size: 24px;
-            padding: 12px 18px;
+            width: 50px;           /* Ancho fijo */
+            height: 50px;          /* Alto fijo igual al ancho */
+            display: flex;         /* Activa flexbox */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center;     /* Centra verticalmente */
             cursor: pointer;
             border-radius: 50%;
             transition: background 0.3s, transform 0.2s;
@@ -309,7 +389,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .product-card {
+            .product-card, .global-info-box {
                 flex-direction: column;
             }
             .product-image-grid, .product-details {
@@ -318,12 +398,11 @@
             .product-image-grid {
                 padding: 15px;
             }
+            .product-details {
+                padding: 20px 25px 30px 25px;
+            }
             .info-cards {
                 flex-direction: column;
-            }
-            .price-item {
-                width: 100%;
-                box-sizing: border-box;
             }
             .lightbox-prev { left: 10px; }
             .lightbox-next { right: 10px; }
@@ -336,296 +415,229 @@
     <header>
         <img src="logo/logo.jpg" alt="Logo Pom" class="logo">
         <h1>Pom</h1>
-        <p>Diseños exclusivos</p>
     </header>
 
     <nav>
-        <a href="#reposteria">Repostería</a>
+        <a href="#info">Precios</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#nosotros">Nosotros</a>
         <a href="#envios">Envíos y Pagos</a>
     </nav>
 
     <div class="container">
         
-        <h2 id="reposteria" class="section-title">Repostería Creativa</h2>
+        <!-- CAJA: Información y Precios Generales -->
+        <div id="info" class="global-info-box">
+            <div class="global-features">
+                <h2>Información de nuestros cortadores</h2>
+                <p>Todos nuestros productos están diseñados pensando en la mejor experiencia de repostería:</p>
+                <ul>
+                    <li><strong>Diseño Propio y Exclusivo</strong></li>
+                    <li><strong>Material Eco-Friendly y Biodegradable</strong></li>
+                    <li><strong>100% Producción Propia</strong></li>
+                    <li><strong>Multiuso y Versátil</strong></li>
+                </ul>
+            </div>
+            <div class="global-pricing">
+                <div class="price-item"><span>1 a 3 unidades:</span> $3.200 ARS c/u</div>
+                <div class="price-item"><span>Kit de 4 unidades:</span> $9.250 ARS</div>
+                <div class="price-item"><span>Kit de 8 unidades:</span> $16.880 ARS</div>
+                <div class="price-item"><span>Kit de 12 unidades:</span> $23.450 ARS</div>
+                <div class="combo-note">💡 Podés armar tus kits combinando diseños de cualquier temática del catálogo.</div>
+            </div>
+        </div>
+
+        <h2 id="catalogo" class="section-title">Catálogo / Repostería Creativa</h2>
 
         <!-- PRODUCTO 1: HARRY POTTER -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="harry_poter/img1.jpg" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="harry_poter/img2.jpg" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="harry_poter/img3.jpg" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="harry_poter/img4.jpg" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="harry_poter/img1.jpg" alt="Cortador Harry Potter"></div>
+                <div class="img-wrapper"><img src="harry_poter/img2.jpg" alt="Cortador Harry Potter"></div>
+                <div class="img-wrapper"><img src="harry_poter/img3.jpg" alt="Cortador Harry Potter"></div>
+                <div class="img-wrapper"><img src="harry_poter/img4.jpg" alt="Cortador Harry Potter"></div>
             </div>
             <div class="product-details">
                 <h3>Mundo Mágico - Harry Potter</h3>
                 <p>Lleva la magia de Hogwarts directamente a tu cocina. Sorprende a los más fanáticos con galletas encantadas de sus casas y símbolos favoritos. Un set imprescindible para cualquier mago pastelero.</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 2: ANIMALES DEL BOSQUE -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="animales_bosque/img1.png" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="animales_bosque/img2.png" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="animales_bosque/img3.png" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="animales_bosque/img7.png" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="animales_bosque/img1.png" alt="Cortador Animales Bosque"></div>
+                <div class="img-wrapper"><img src="animales_bosque/img2.png" alt="Cortador Animales Bosque"></div>
+                <div class="img-wrapper"><img src="animales_bosque/img3.png" alt="Cortador Animales Bosque"></div>
+                <div class="img-wrapper"><img src="animales_bosque/img7.png" alt="Cortador Animales Bosque"></div>
             </div>
             <div class="product-details">
                 <h3>Ternura Natural - Animales del Bosque</h3>
                 <p>Crea las galletas más adorables con nuestro set rústico. Zorritos, osos y mapaches listos para darle un toque encantador y silvestre a tus mesas dulces. Ideales para temáticas "Woodland".</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 3: ANIMALES DE LA SABANA -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="animales_savana/img1.jpg" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="animales_savana/img2.jpg" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="animales_savana/img3.jpg" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="animales_savana/img7.jpg" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="animales_savana/img1.jpg" alt="Cortador Sabana"></div>
+                <div class="img-wrapper"><img src="animales_savana/img2.jpg" alt="Cortador Sabana"></div>
+                <div class="img-wrapper"><img src="animales_savana/img3.jpg" alt="Cortador Sabana"></div>
+                <div class="img-wrapper"><img src="animales_savana/img7.jpg" alt="Cortador Sabana"></div>
             </div>
             <div class="product-details">
                 <h3>Aventura Safari - Animales de la Sabana</h3>
                 <p>¡Un safari de sabor! Sorprende a los más chicos con leones valientes, elefantes y jirafas. La opción perfecta para cumpleaños llenos de aventura, selva y mucha diversión.</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 4: BABY SHOWER -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="baby_shower/img1.jpg" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="baby_shower/img2.jpg" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="baby_shower/img3.jpg" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="baby_shower/img4.jpg" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="baby_shower/img1.jpg" alt="Cortador Baby Shower"></div>
+                <div class="img-wrapper"><img src="baby_shower/img2.jpg" alt="Cortador Baby Shower"></div>
+                <div class="img-wrapper"><img src="baby_shower/img3.jpg" alt="Cortador Baby Shower"></div>
+                <div class="img-wrapper"><img src="baby_shower/img4.jpg" alt="Cortador Baby Shower"></div>
             </div>
             <div class="product-details">
                 <h3>Dulce Espera - Baby Shower</h3>
                 <p>Celebra la llegada de un nuevo integrante con diseños delicados y súper tiernos. Chupones, carritos, bodys y ositos pensados para hacer de ese evento un recuerdo dulce e inolvidable.</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 5: CUMPLEAÑOS -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="cumple/img1.jpg" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="cumple/img2.jpg" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="cumple/img3.jpg" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="cumple/img4.jpg" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="cumple/img1.jpg" alt="Cortador Cumpleaños"></div>
+                <div class="img-wrapper"><img src="cumple/img2.jpg" alt="Cortador Cumpleaños"></div>
+                <div class="img-wrapper"><img src="cumple/img3.jpg" alt="Cortador Cumpleaños"></div>
+                <div class="img-wrapper"><img src="cumple/img4.jpg" alt="Cortador Cumpleaños"></div>
             </div>
             <div class="product-details">
                 <h3>Fiesta Total - Cumpleaños</h3>
                 <p>¡Que la celebración empiece por el paladar! Globos, pasteles, regalos y bonetes para festejar a lo grande. Este set es el comodín infaltable que todo pastelero necesita tener en su taller.</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 6: DEMON HUNTERS -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="deamon_hunters/img1.jpg" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="deamon_hunters/img2.jpg" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="deamon_hunters/img3.jpg" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="deamon_hunters/img4.jpg" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="deamon_hunters/img1.jpg" alt="Cortador Demon Hunters"></div>
+                <div class="img-wrapper"><img src="deamon_hunters/img2.jpg" alt="Cortador Demon Hunters"></div>
+                <div class="img-wrapper"><img src="deamon_hunters/img3.jpg" alt="Cortador Demon Hunters"></div>
+                <div class="img-wrapper"><img src="deamon_hunters/img4.jpg" alt="Cortador Demon Hunters"></div>
             </div>
             <div class="product-details">
                 <h3>Anime & Acción - Cazadores de Demonios</h3>
                 <p>Para los verdaderos fanáticos del anime. Recrea a tus personajes favoritos con un nivel de detalle increíble. Perfectos para pintar sobre fondant o glasé y dejar a todos con la boca abierta.</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 7: FLORES -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="flores/img1.jpg" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="flores/img2.jpg" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="flores/img3.jpg" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="flores/img4.jpg" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="flores/img1.jpg" alt="Cortador Flores"></div>
+                <div class="img-wrapper"><img src="flores/img2.jpg" alt="Cortador Flores"></div>
+                <div class="img-wrapper"><img src="flores/img3.jpg" alt="Cortador Flores"></div>
+                <div class="img-wrapper"><img src="flores/img4.jpg" alt="Cortador Flores"></div>
             </div>
             <div class="product-details">
                 <h3>Jardín Botánico - Set de Flores</h3>
                 <p>Dale un toque primaveral, sofisticado y muy elegante a tus creaciones. Una delicada selección de siluetas florales, ideales para eventos románticos, bodas, comuniones o el Día de la Madre.</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 8: HALLOWEEN -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="haloween/img1.png" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="haloween/img2.png" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="haloween/img3.png" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="haloween/img9.png" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="haloween/img1.png" alt="Cortador Halloween"></div>
+                <div class="img-wrapper"><img src="haloween/img2.png" alt="Cortador Halloween"></div>
+                <div class="img-wrapper"><img src="haloween/img3.png" alt="Cortador Halloween"></div>
+                <div class="img-wrapper"><img src="haloween/img9.png" alt="Cortador Halloween"></div>
             </div>
             <div class="product-details">
                 <h3>Dulce o Truco - Especial Halloween</h3>
                 <p>Prepara las galletas más espeluznantes y divertidas de la temporada. Calabazas sonrientes, fantasmas curiosos y murciélagos listos para protagonizar la Noche de Brujas más rica de todas.</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 9: HELLO KITTY -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="kitty/img1.jpg" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="kitty/img2.jpg" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="kitty/img12.png" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="kitty/img13.png" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="kitty/img1.jpg" alt="Cortador Kitty"></div>
+                <div class="img-wrapper"><img src="kitty/img2.jpg" alt="Cortador Kitty"></div>
+                <div class="img-wrapper"><img src="kitty/img12.png" alt="Cortador Kitty"></div>
+                <div class="img-wrapper"><img src="kitty/img13.png" alt="Cortador Kitty"></div>
             </div>
             <div class="product-details">
                 <h3>Estilo Kawaii - Gatita Kitty</h3>
                 <p>La gatita más famosa y encantadora llega a tu repostería. Diseños súper detallados que enamorarán a grandes nostálgicos y a los más chicos por igual. ¡Imposible resistirse a tanta ternura!</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 10: MICKEY -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="mickey/img1.jpg" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="mickey/img2.jpg" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="mickey/img3.jpg" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="mickey/img4.jpg" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="mickey/img1.jpg" alt="Cortador Mickey"></div>
+                <div class="img-wrapper"><img src="mickey/img2.jpg" alt="Cortador Mickey"></div>
+                <div class="img-wrapper"><img src="mickey/img3.jpg" alt="Cortador Mickey"></div>
+                <div class="img-wrapper"><img src="mickey/img4.jpg" alt="Cortador Mickey"></div>
             </div>
             <div class="product-details">
                 <h3>Clásico Inolvidable - Siluetas Mickey</h3>
                 <p>El ratón más querido del mundo es una apuesta segura que nunca pasa de moda. Agrega la magia de los clásicos animados a tus mesas dulces con estas siluetas icónicas y divertidas.</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
         <!-- PRODUCTO 11: PERRITOS -->
         <div class="product-card">
             <div class="product-image-grid">
-                <div class="img-wrapper"><img src="perritos/img1.jpg" alt="Cortador 1"></div>
-                <div class="img-wrapper"><img src="perritos/img2.jpg" alt="Cortador 2"></div>
-                <div class="img-wrapper"><img src="perritos/img3.jpg" alt="Cortador 3"></div>
-                <div class="img-wrapper"><img src="perritos/img4.jpg" alt="Cortador 4"></div>
+                <div class="img-wrapper"><img src="perritos/img1.jpg" alt="Cortador Perritos"></div>
+                <div class="img-wrapper"><img src="perritos/img2.jpg" alt="Cortador Perritos"></div>
+                <div class="img-wrapper"><img src="perritos/img3.jpg" alt="Cortador Perritos"></div>
+                <div class="img-wrapper"><img src="perritos/img4.jpg" alt="Cortador Perritos"></div>
             </div>
             <div class="product-details">
                 <h3>Amor Peludo - Perritos</h3>
                 <p>Para los verdaderos dog-lovers. Huellitas, huesitos y las caritas de los perritos más simpáticos. Ideales para armar bandejas temáticas o incluso para festejar el cumple de tu mejor amigo de cuatro patas.</p>
-                <ul>
-                    <li>Bordes con filo reforzado para un corte limpio.</li>
-                    <li>Fabricados en PLA premium apto alimentos.</li>
-                    <li>Fáciles de lavar (con agua fría/tibia, no lavavajillas).</li>
-                </ul>
-                <div class="pricing-container">
-                    <div class="price-item"><span>1 Unidad:</span> $1.800 ARS</div>
-                    <div class="price-item"><span>Kit de 4 unidades:</span> $6.500 ARS</div>
-                    <div class="price-item"><span>Kit de 7 unidades:</span> $10.500 ARS</div>
-                </div>
-                <a href="#" class="btn">Comprar / Consultar por WhatsApp</a>
+                <a href="#" class="btn">Consultar por WhatsApp</a>
             </div>
         </div>
 
-    </div>
-    <!-- Sección de Envíos y Pagos -->
-    <div id="envios" class="info-section">
+        <!-- SECCIÓN: Por qué elegirnos -->
+        <h2 id="nosotros" class="section-title">¿Por qué elegir nuestros cortadores?</h2>
+        
+        <div class="why-us-grid">
+            <div class="why-card">
+                <h4>✨ Diseño Propio y Exclusivo</h4>
+                <p>Desarrollados desde cero y optimizados minuciosamente para lograr un corte limpio y un estampado definido, evitando que la masa se pegue o pierda forma al desmoldar.</p>
+            </div>
+            <div class="why-card">
+                <h4>🌱 Material Eco-Friendly</h4>
+                <p>Fabricados en PLA (ácido poliláctico), un plástico de origen vegetal derivado de recursos renovables como el almidón de maíz o la caña de azúcar. Una alternativa sustentable.</p>
+            </div>
+            <div class="why-card">
+                <h4>🏭 100% Producción Propia</h4>
+                <p>Controlamos todo el proceso de fabricación e impresión 3D de punta a punta, garantizando máxima precisión, solidez y un control de calidad riguroso en cada pieza.</p>
+            </div>
+            <div class="why-card">
+                <h4>👩‍🍳 Multiuso y Versátil</h4>
+                <p>Ideales para galletas, pasta de goma, fondant, porcelana fría y masas de modelar. <strong>Tip:</strong> Para repostería, recomendamos colocar un film protector sobre la masa antes de cortar.</p>
+            </div>
+        </div>
+
+        <!-- Sección de Envíos y Pagos -->
+        <h2 id="envios" class="section-title">Envíos y Pagos</h2>
         <div class="info-cards">
             <!-- Tarjeta Pagos -->
             <div class="info-card">
@@ -654,6 +666,7 @@
             <p>Hacemos impresiones 3D a pedido, recuerdos para eventos y regalos corporativos. ¡Consultanos!</p>
             <p><strong>Instagram:</strong> @tiendabacca | <strong>WhatsApp:</strong> +54 9 11 1234-5678</p>
         </div>
+
     </div>
 
     <!-- Modal Lightbox / Visor de Imágenes -->
