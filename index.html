@@ -360,8 +360,6 @@
             border: none;
             line-height: 1;
         }
-        
-        /* --- CORRECCIÓN DEL BOTÓN REDONDEADO --- */
         .lightbox-nav {
             position: absolute;
             top: 50%;
@@ -370,11 +368,7 @@
             color: white;
             border: none;
             font-size: 24px;
-            width: 50px;           /* Ancho fijo */
-            height: 50px;          /* Alto fijo igual al ancho */
-            display: flex;         /* Activa flexbox */
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center;     /* Centra verticalmente */
+            padding: 12px 18px;
             cursor: pointer;
             border-radius: 50%;
             transition: background 0.3s, transform 0.2s;
@@ -458,9 +452,9 @@
                 <div class="img-wrapper"><img src="harry_poter/img4.jpg" alt="Cortador Harry Potter"></div>
             </div>
             <div class="product-details">
-                <h3>Mundo Mágico - Harry Potter</h3>
+                <h3 class="product-title">Mundo Mágico - Harry Potter</h3>
                 <p>Lleva la magia de Hogwarts directamente a tu cocina. Sorprende a los más fanáticos con galletas encantadas de sus casas y símbolos favoritos. Un set imprescindible para cualquier mago pastelero.</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -473,9 +467,9 @@
                 <div class="img-wrapper"><img src="animales_bosque/img7.png" alt="Cortador Animales Bosque"></div>
             </div>
             <div class="product-details">
-                <h3>Ternura Natural - Animales del Bosque</h3>
+                <h3 class="product-title">Ternura Natural - Animales del Bosque</h3>
                 <p>Crea las galletas más adorables con nuestro set rústico. Zorritos, osos y mapaches listos para darle un toque encantador y silvestre a tus mesas dulces. Ideales para temáticas "Woodland".</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -488,9 +482,9 @@
                 <div class="img-wrapper"><img src="animales_savana/img7.jpg" alt="Cortador Sabana"></div>
             </div>
             <div class="product-details">
-                <h3>Aventura Safari - Animales de la Sabana</h3>
+                <h3 class="product-title">Aventura Safari - Animales de la Sabana</h3>
                 <p>¡Un safari de sabor! Sorprende a los más chicos con leones valientes, elefantes y jirafas. La opción perfecta para cumpleaños llenos de aventura, selva y mucha diversión.</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -503,9 +497,9 @@
                 <div class="img-wrapper"><img src="baby_shower/img4.jpg" alt="Cortador Baby Shower"></div>
             </div>
             <div class="product-details">
-                <h3>Dulce Espera - Baby Shower</h3>
+                <h3 class="product-title">Dulce Espera - Baby Shower</h3>
                 <p>Celebra la llegada de un nuevo integrante con diseños delicados y súper tiernos. Chupones, carritos, bodys y ositos pensados para hacer de ese evento un recuerdo dulce e inolvidable.</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -518,9 +512,9 @@
                 <div class="img-wrapper"><img src="cumple/img4.jpg" alt="Cortador Cumpleaños"></div>
             </div>
             <div class="product-details">
-                <h3>Fiesta Total - Cumpleaños</h3>
+                <h3 class="product-title">Fiesta Total - Cumpleaños</h3>
                 <p>¡Que la celebración empiece por el paladar! Globos, pasteles, regalos y bonetes para festejar a lo grande. Este set es el comodín infaltable que todo pastelero necesita tener en su taller.</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -533,9 +527,9 @@
                 <div class="img-wrapper"><img src="deamon_hunters/img4.jpg" alt="Cortador Demon Hunters"></div>
             </div>
             <div class="product-details">
-                <h3>Anime & Acción - Cazadores de Demonios</h3>
+                <h3 class="product-title">Anime & Acción - Cazadores de Demonios</h3>
                 <p>Para los verdaderos fanáticos del anime. Recrea a tus personajes favoritos con un nivel de detalle increíble. Perfectos para pintar sobre fondant o glasé y dejar a todos con la boca abierta.</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -548,9 +542,9 @@
                 <div class="img-wrapper"><img src="flores/img4.jpg" alt="Cortador Flores"></div>
             </div>
             <div class="product-details">
-                <h3>Jardín Botánico - Set de Flores</h3>
+                <h3 class="product-title">Jardín Botánico - Set de Flores</h3>
                 <p>Dale un toque primaveral, sofisticado y muy elegante a tus creaciones. Una delicada selección de siluetas florales, ideales para eventos románticos, bodas, comuniones o el Día de la Madre.</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -563,9 +557,9 @@
                 <div class="img-wrapper"><img src="haloween/img9.png" alt="Cortador Halloween"></div>
             </div>
             <div class="product-details">
-                <h3>Dulce o Truco - Especial Halloween</h3>
+                <h3 class="product-title">Dulce o Truco - Especial Halloween</h3>
                 <p>Prepara las galletas más espeluznantes y divertidas de la temporada. Calabazas sonrientes, fantasmas curiosos y murciélagos listos para protagonizar la Noche de Brujas más rica de todas.</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -578,9 +572,9 @@
                 <div class="img-wrapper"><img src="kitty/img13.png" alt="Cortador Kitty"></div>
             </div>
             <div class="product-details">
-                <h3>Estilo Kawaii - Gatita Kitty</h3>
+                <h3 class="product-title">Estilo Kawaii - Gatita Kitty</h3>
                 <p>La gatita más famosa y encantadora llega a tu repostería. Diseños súper detallados que enamorarán a grandes nostálgicos y a los más chicos por igual. ¡Imposible resistirse a tanta ternura!</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -593,9 +587,9 @@
                 <div class="img-wrapper"><img src="mickey/img4.jpg" alt="Cortador Mickey"></div>
             </div>
             <div class="product-details">
-                <h3>Clásico Inolvidable - Siluetas Mickey</h3>
+                <h3 class="product-title">Clásico Inolvidable - Siluetas Mickey</h3>
                 <p>El ratón más querido del mundo es una apuesta segura que nunca pasa de moda. Agrega la magia de los clásicos animados a tus mesas dulces con estas siluetas icónicas y divertidas.</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -608,9 +602,9 @@
                 <div class="img-wrapper"><img src="perritos/img4.jpg" alt="Cortador Perritos"></div>
             </div>
             <div class="product-details">
-                <h3>Amor Peludo - Perritos</h3>
+                <h3 class="product-title">Amor Peludo - Perritos</h3>
                 <p>Para los verdaderos dog-lovers. Huellitas, huesitos y las caritas de los perritos más simpáticos. Ideales para armar bandejas temáticas o incluso para festejar el cumple de tu mejor amigo de cuatro patas.</p>
-                <a href="#" class="btn">Consultar por WhatsApp</a>
+                <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
 
@@ -664,7 +658,7 @@
         <div class="contact-banner">
             <h3>✨ ¿Buscás un diseño personalizado o un color especial? ✨</h3>
             <p>Hacemos impresiones 3D a pedido, recuerdos para eventos y regalos corporativos. ¡Consultanos!</p>
-            <p><strong>Instagram:</strong> @tiendabacca | <strong>WhatsApp:</strong> +54 9 11 1234-5678</p>
+            <p><strong>Instagram:</strong> @tiendabacca | <strong>WhatsApp:</strong> +54 9 11 3571-2260</p>
         </div>
 
     </div>
@@ -680,7 +674,26 @@
     </div>
 
     <script>
-        // Variables globales del Visor
+        // --- 1. Lógica para generar los enlaces de WhatsApp dinámicamente ---
+        const numeroWhatsApp = "5491135712260"; // Código de país +54 9 seguido del número
+        
+        // Seleccionamos todos los botones que tienen la clase 'btn-whatsapp'
+        document.querySelectorAll('.btn-whatsapp').forEach(btn => {
+            // Buscamos el título del producto dentro del mismo contenedor (.product-details)
+            const productTitle = btn.parentElement.querySelector('.product-title').innerText;
+            
+            // Armamos la plantilla del mensaje con espacios en blanco para que el cliente la complete
+            const mensajePlantilla = `¡Hola! Me gustaría hacer un pedido relacionado con: *${productTitle}*.\n\nPara agilizar el pedido, te dejo los siguientes detalles:\n- Cantidad de cortadores: \n- Modelos específicos: \n- Nombre y Apellido: \n- Dirección de envío o sucursal de retiro: \n- Medio de pago elegido: `;
+            
+            // Codificamos el mensaje para que sea válido en una URL (respeta los saltos de línea y espacios)
+            const mensajeCodificado = encodeURIComponent(mensajePlantilla);
+            
+            // Asignamos el enlace generado al botón
+            btn.href = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
+            btn.target = "_blank"; // Abre WhatsApp en una pestaña nueva
+        });
+
+        // --- 2. Lógica del Visor de Imágenes (Lightbox) ---
         let currentGallery = [];
         let currentIndex = 0;
 
@@ -708,12 +721,12 @@
         function openLightbox() {
             updateImage();
             lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Bloquea el scroll del fondo
+            document.body.style.overflow = 'hidden'; 
         }
 
         function closeLightbox() {
             lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Restaura el scroll
+            document.body.style.overflow = 'auto'; 
         }
 
         function updateImage() {
@@ -730,19 +743,16 @@
             updateImage();
         }
 
-        // Eventos de botones
         nextBtn.addEventListener('click', nextImage);
         prevBtn.addEventListener('click', prevImage);
         closeBtn.addEventListener('click', closeLightbox);
 
-        // Cerrar al hacer clic en la zona oscura del fondo
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
                 closeLightbox();
             }
         });
 
-        // Controles de Teclado (Flecha izq, Flecha der, Esc)
         document.addEventListener('keydown', (e) => {
             if (!lightbox.classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
