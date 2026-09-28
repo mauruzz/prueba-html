@@ -81,7 +81,7 @@
             font-size: 2em;
         }
 
-        /* Caja General de Precios y Características */
+        /* Caja General de Características (Sin precios) */
         .global-info-box {
             background-color: #FFFFFF;
             border: 2px solid #F4B6C2;
@@ -90,58 +90,28 @@
             margin-top: 40px;
             margin-bottom: 50px;
             box-shadow: 0 4px 15px rgba(74, 62, 61, 0.08);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            align-items: center;
-        }
-        .global-features {
-            flex: 1;
-            min-width: 300px;
         }
         .global-features h2 {
             color: #D87A7A;
             margin-top: 0;
             font-size: 1.8em;
+            text-align: center;
         }
         .global-features p {
             font-size: 1.1em;
             color: #6E5E5C;
+            text-align: center;
+            margin-bottom: 20px;
         }
         .global-features ul {
             font-size: 1.1em;
             line-height: 1.8;
             color: #4A3E3D;
-            padding-left: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
         .global-features ul li {
             margin-bottom: 8px;
-        }
-        
-        /* Estilos de Precios Múltiples */
-        .global-pricing {
-            flex: 1;
-            min-width: 300px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .price-item {
-            background-color: #FAF5F0;
-            border-left: 5px solid #D87A7A;
-            padding: 12px 20px;
-            border-radius: 8px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #4A3E3D;
-            font-weight: bold;
-            font-size: 1.15em;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-        }
-        .price-item span {
-            font-weight: normal;
-            color: #6E5E5C;
         }
         .combo-note {
             background-color: #FFE6E6;
@@ -150,11 +120,11 @@
             border-radius: 8px;
             text-align: center;
             font-weight: bold;
-            font-size: 0.95em;
-            margin-top: 10px;
+            font-size: 1em;
+            margin-top: 20px;
         }
         
-        /* Tarjeta de Producto Simplificada */
+        /* Tarjeta de Producto */
         .product-card {
             display: flex;
             background: #FFFFFF;
@@ -206,12 +176,38 @@
             margin-top: 0;
             color: #D87A7A;
             font-size: 1.8em;
+            margin-bottom: 15px;
         }
         .product-details p {
-            font-size: 1.15em;
-            line-height: 1.6;
+            font-size: 1.1em;
+            line-height: 1.5;
             color: #4A3E3D;
+            margin-bottom: 20px;
+            margin-top: 0;
+        }
+
+        /* Precios por Producto */
+        .product-pricing {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
             margin-bottom: 25px;
+        }
+        .product-price-item {
+            background-color: #FAF5F0;
+            border-left: 4px solid #D87A7A;
+            padding: 10px 15px;
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #4A3E3D;
+            font-weight: bold;
+            font-size: 1.05em;
+        }
+        .product-price-item span {
+            font-weight: normal;
+            color: #6E5E5C;
         }
 
         .btn {
@@ -383,7 +379,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .product-card, .global-info-box {
+            .product-card {
                 flex-direction: column;
             }
             .product-image-grid, .product-details {
@@ -412,7 +408,7 @@
     </header>
 
     <nav>
-        <a href="#info">Precios</a>
+        <a href="#info">Info</a>
         <a href="#catalogo">Catálogo</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#envios">Envíos y Pagos</a>
@@ -420,7 +416,7 @@
 
     <div class="container">
         
-        <!-- CAJA: Información y Precios Generales -->
+        <!-- CAJA: Información General (Sin listado de precios) -->
         <div id="info" class="global-info-box">
             <div class="global-features">
                 <h2>Información de nuestros cortadores</h2>
@@ -431,13 +427,7 @@
                     <li><strong>100% Producción Propia</strong></li>
                     <li><strong>Multiuso y Versátil</strong></li>
                 </ul>
-            </div>
-            <div class="global-pricing">
-                <div class="price-item"><span>1 a 3 unidades:</span> $3.200 ARS c/u</div>
-                <div class="price-item"><span>Kit de 4 unidades:</span> $9.250 ARS</div>
-                <div class="price-item"><span>Kit de 8 unidades:</span> $16.880 ARS</div>
-                <div class="price-item"><span>Kit de 12 unidades:</span> $23.450 ARS</div>
-                <div class="combo-note">💡 Podés armar tus kits combinando diseños de cualquier temática del catálogo.</div>
+                <div class="combo-note">💡 Podés armar tus kits combinando diseños dentro de cada temática del catálogo.</div>
             </div>
         </div>
 
@@ -454,6 +444,14 @@
             <div class="product-details">
                 <h3 class="product-title">Mundo Mágico - Harry Potter</h3>
                 <p>Lleva la magia de Hogwarts directamente a tu cocina. Sorprende a los más fanáticos con galletas encantadas de sus casas y símbolos favoritos. Un set imprescindible para cualquier mago pastelero.</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $3.470 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $8.419 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $15.347 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $21.286 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -469,6 +467,14 @@
             <div class="product-details">
                 <h3 class="product-title">Ternura Natural - Animales del Bosque</h3>
                 <p>Crea las galletas más adorables con nuestro set rústico. Zorritos, osos y mapaches listos para darle un toque encantador y silvestre a tus mesas dulces. Ideales para temáticas "Woodland".</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $2.615 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $6.138 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $11.072 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $15.300 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -484,6 +490,14 @@
             <div class="product-details">
                 <h3 class="product-title">Aventura Safari - Animales de la Sabana</h3>
                 <p>¡Un safari de sabor! Sorprende a los más chicos con leones valientes, elefantes y jirafas. La opción perfecta para cumpleaños llenos de aventura, selva y mucha diversión.</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $3.087 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $7.398 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $13.434 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $18.607 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -499,6 +513,14 @@
             <div class="product-details">
                 <h3 class="product-title">Dulce Espera - Baby Shower</h3>
                 <p>Celebra la llegada de un nuevo integrante con diseños delicados y súper tiernos. Chupones, carritos, bodys y ositos pensados para hacer de ese evento un recuerdo dulce e inolvidable.</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $3.387 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $8.199 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $14.935 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $20.709 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -514,6 +536,14 @@
             <div class="product-details">
                 <h3 class="product-title">Fiesta Total - Cumpleaños</h3>
                 <p>¡Que la celebración empiece por el paladar! Globos, pasteles, regalos y bonetes para festejar a lo grande. Este set es el comodín infaltable que todo pastelero necesita tener en su taller.</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $2.786 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $6.596 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $11.930 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $16.502 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -529,6 +559,14 @@
             <div class="product-details">
                 <h3 class="product-title">Anime & Acción - Cazadores de Demonios</h3>
                 <p>Para los verdaderos fanáticos del anime. Recrea a tus personajes favoritos con un nivel de detalle increíble. Perfectos para pintar sobre fondant o glasé y dejar a todos con la boca abierta.</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $3.508 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $8.520 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $15.538 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $21.553 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -544,6 +582,14 @@
             <div class="product-details">
                 <h3 class="product-title">Jardín Botánico - Set de Flores</h3>
                 <p>Dale un toque primaveral, sofisticado y muy elegante a tus creaciones. Una delicada selección de siluetas florales, ideales para eventos románticos, bodas, comuniones o el Día de la Madre.</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $3.599 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $8.764 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $15.995 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $22.193 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -559,6 +605,14 @@
             <div class="product-details">
                 <h3 class="product-title">Dulce o Truco - Especial Halloween</h3>
                 <p>Prepara las galletas más espeluznantes y divertidas de la temporada. Calabazas sonrientes, fantasmas curiosos y murciélagos listos para protagonizar la Noche de Brujas más rica de todas.</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $3.200 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $9.250 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $16.880 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $23.450 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -574,6 +628,14 @@
             <div class="product-details">
                 <h3 class="product-title">Estilo Kawaii - Gatita Kitty</h3>
                 <p>La gatita más famosa y encantadora llega a tu repostería. Diseños súper detallados que enamorarán a grandes nostálgicos y a los más chicos por igual. ¡Imposible resistirse a tanta ternura!</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $2.686 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $6.329 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $11.428 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $15.799 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -589,6 +651,14 @@
             <div class="product-details">
                 <h3 class="product-title">Clásico Inolvidable - Siluetas Mickey</h3>
                 <p>El ratón más querido del mundo es una apuesta segura que nunca pasa de moda. Agrega la magia de los clásicos animados a tus mesas dulces con estas siluetas icónicas y divertidas.</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $3.479 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $8.444 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $15.394 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $21.351 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -604,6 +674,14 @@
             <div class="product-details">
                 <h3 class="product-title">Amor Peludo - Perritos</h3>
                 <p>Para los verdaderos dog-lovers. Huellitas, huesitos y las caritas de los perritos más simpáticos. Ideales para armar bandejas temáticas o incluso para festejar el cumple de tu mejor amigo de cuatro patas.</p>
+                
+                <div class="product-pricing">
+                    <div class="product-price-item"><span>1 a 3 unidades:</span> $3.824 ARS c/u</div>
+                    <div class="product-price-item"><span>Kit de 4 unidades:</span> $9.364 ARS</div>
+                    <div class="product-price-item"><span>Kit de 8 unidades:</span> $17.120 ARS</div>
+                    <div class="product-price-item"><span>Kit de 12 unidades:</span> $23.768 ARS</div>
+                </div>
+
                 <a href="#" class="btn btn-whatsapp">Armar pedido por WhatsApp</a>
             </div>
         </div>
@@ -673,7 +751,7 @@
 
     <script>
         // --- 1. Lógica para generar los enlaces de WhatsApp dinámicamente ---
-        const numeroWhatsApp = "5491135712260"; // Código de país +54 9 seguido del número
+        const numeroWhatsApp = "5491178193227"; // Código de país +54 9 seguido del número
         
         // Seleccionamos todos los botones que tienen la clase 'btn-whatsapp'
         document.querySelectorAll('.btn-whatsapp').forEach(btn => {
